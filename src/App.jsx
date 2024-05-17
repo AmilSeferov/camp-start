@@ -1,22 +1,30 @@
-import React from 'react';
-import { Route, Routes } from 'react-router-dom';
-import MainPage from './pages/MainPage/MainPage';
-import ListPage from './pages/ListPage/ListPage';
+import React from "react";
+import { Route, Routes } from "react-router-dom";
+import MainPage from "./pages/MainPage/MainPage";
+import ListPage from "./pages/ListPage/ListPage";
+import "./reset.css";
+import "./common.css";
+import { useSelector } from "react-redux";
 
-import './reset.css';
-import './common.css';
+function App() {
+  const listId = useSelector((state) => state.movieList.listId);
+  const fav = useSelector((state) => state.movieList.movieLists);
 
-function App () {
-
-    return (
-      <div className="app">
-       <Routes>
+  return (
+    <div className="app">
+      <Routes>
         <Route path="/" element={<MainPage />} />
-        <Route path="/list/:id" element={<ListPage />} />
+        {listId?.map((item, index) => {
+          return (
+            <Route
+              path={`/list/${item}`}
+              element={<ListPage data={fav[index]} key={index} />}
+            />
+          );
+        })}
       </Routes>
-      </div>
-    );
-  
-  }
+    </div>
+  );
 
+}
 export default App;

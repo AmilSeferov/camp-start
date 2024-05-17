@@ -1,19 +1,42 @@
 .main-page__content {
-    padding: 42px calc(50% - 500px);
-    display: flex;
-    justify-content: space-between;
+  padding: 42px calc(50% - 500px);
+  display: flex;
+  justify-content: space-between;
 }
 
 .main-page__main-section {
-    padding-left: 40px;
-    box-sizing: border-box;
-    width: 60%;
+  padding-left: 40px;
+  box-sizing: border-box;
+  width: 60%;
 }
 
 .main-page__search-box {
-    margin-bottom: 35px;
+  margin-bottom: 35px;
 }
 
 .main-page__favorites {
-    width: 35%;   
+  width: 35%;
+}
+nav {
+  ul {
+    li {
+        background-color: blueviolet;
+        display: flex;
+        align-items: center;
+        border-radius: 20px;
+    padding: 20px;
+    margin: 10px;
+    div{
+      width: 50px;
+      height: 75px;
+
+    img{
+      position: absolute;
+       width: 50px;
+
+    }
+  
+  }
+    }
+  }
 }
